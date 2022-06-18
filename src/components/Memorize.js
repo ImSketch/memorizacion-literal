@@ -11,8 +11,13 @@ import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
 import transformText from '../helpers/transformText';
+import deviceType from '../helpers/deviceType';
+import dynamic from "next/dynamic";
+
+const Tooltip = dynamic(() => import('@mui/material/Tooltip'), {
+    ssr: false,
+})
 
 export default function Memorize()
 {
@@ -21,23 +26,6 @@ export default function Memorize()
     const [memorizeMode, setMemorizeMode] = React.useState('first_letters');
     const [isReading, setIsReading] = React.useState(false);
     const [wordFocussedIndex, setWordFocussedIndex] = React.useState(0);
-
-    /**
-     * Saber que dispositivo tiene el usuario
-     * 
-     * @returns {void}
-     */
-    const deviceType = () =>
-    {
-        const ua = navigator.userAgent;
-        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-            return "tablet";
-        }
-        else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-            return "mobile";
-        }
-        return "desktop";
-    };
 
     /**
      * Maneja cuando se presione una tecla en el recuadro

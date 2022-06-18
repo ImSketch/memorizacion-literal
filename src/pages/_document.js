@@ -2,13 +2,27 @@ import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from '../createEmotionCache';
+import theme from '../theme';
 
-export default class MyDocument extends Document {
-  render() {
+export default class MyDocument extends Document
+{
+  render()
+  {
     return (
       <Html lang="es">
         <Head>
-          <link rel="shortcut icon" href="/static/favicon.ico" />
+          <meta name="theme-color" content={theme.palette.primary.main} />
+          <link rel="manifest" href="/manifest.json" />
+          <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
+          <link href='/icon-16x16.png' rel='icon' type='image/png' sizes='16x16' />
+          <link href='/icon-32x32.png' rel='icon' type='image/png' sizes='32x32' />
+          <link href='/icon-48x48.png' rel='icon' type='image/png' sizes='48x48' />
+          <link href='/icon-96x96.png' rel='icon' type='image/png' sizes='96x96' />
+          <link href='/icon-192x192.png' rel='icon' type='image/png' sizes='192x192' />
+          <link href='/icon-256x256.png' rel='icon' type='image/png' sizes='256x256' />
+          <link href='/icon-384x384.png' rel='icon' type='image/png' sizes='384x384' />
+          <link href='/icon-512.png' rel='icon' type='image/png' sizes='512' />
+          <link rel='apple-touch-icon' href='/favicon-512x512.png' />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -27,7 +41,8 @@ export default class MyDocument extends Document {
 
 // `getInitialProps` belongs to `_document` (instead of `_app`),
 // it's compatible with static-site generation (SSG).
-MyDocument.getInitialProps = async (ctx) => {
+MyDocument.getInitialProps = async (ctx) =>
+{
   // Resolution order
   //
   // On the server:
@@ -60,7 +75,8 @@ MyDocument.getInitialProps = async (ctx) => {
   ctx.renderPage = () =>
     originalRenderPage({
       enhanceApp: (App) =>
-        function EnhanceApp(props) {
+        function EnhanceApp(props)
+        {
           return <App emotionCache={cache} {...props} />;
         },
     });

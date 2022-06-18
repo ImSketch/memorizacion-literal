@@ -35,7 +35,10 @@ export default function About()
                         <Chip color='primary' label="¿Cómo sacar provecho?" />
                     </Divider>
 
-                    <Stack direction='row' spacing={3} divider={<Divider orientation="vertical" flexItem />}>
+                    <Stack 
+                        direction='row' 
+                        spacing={2} 
+                        divider={<Divider orientation="vertical" flexItem />}>
                         <Typography variant='body1' gutterBottom>
                             <b>1.</b> De nada servirá que repitas como un papagayo el contenido que deseas memorizar sin antes haberlo entendido <b>perfectamente</b>. Por lo tanto, use esta
                             herramienta únicamente cuando haya comprendido lo que desea memorizar.

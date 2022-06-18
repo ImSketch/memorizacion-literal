@@ -15,12 +15,11 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
-    "@reduxjs/toolkit": "^1.8.2",
-    "next": "12.1.6",
+    "next": "12.1.7-canary.4",
+    "next-pwa": "^5.5.4",
     "prop-types": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-redux": "^8.0.2",
     "trim-newlines": "^4.0.2"
   },
   "devDependencies": {
