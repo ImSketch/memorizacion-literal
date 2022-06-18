@@ -180,6 +180,7 @@ export default function Memorize()
                 onKeyDown={handleKeyDownWhenReading}
                 onClick={handleClickWhenReading}
                 id='reading-area'
+<<<<<<< HEAD
                 sx={{
                     cursor: 'pointer',
                     outline: 'none',
@@ -198,6 +199,10 @@ export default function Memorize()
                         flexWrap: 'wrap',
                         gap: 1
                     }}>
+=======
+                sx={{ cursor: 'pointer', outline: 'none' }}>
+                <Paper tabIndex={0} sx={{ '&:focus': { backgroundColor: 'divider'}, outline:'none', transition: 'all 150ms ease',padding: 3, display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap', gap: 1 }}>
+>>>>>>> 84a232185fd9014009603fc285ece1ba8adae1b0
                     {transformText(value, memorizeMode).map((el, index) => (
                         <Tooltip title={el[0]} key={index}>
                             <Chip
