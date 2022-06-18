@@ -181,7 +181,7 @@ export default function Memorize()
                 onClick={handleClickWhenReading}
                 id='reading-area'
                 sx={{ cursor: 'pointer', outline: 'none' }}>
-                <Paper tabIndex={0} sx={{ '&:focus': { backgroundColor: 'divider'}, transition: 'all 150ms ease',padding: 3, display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap', gap: 1 }}>
+                <Paper tabIndex={0} sx={{ '&:focus': { backgroundColor: 'divider'}, outline:'none', transition: 'all 150ms ease',padding: 3, display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap', gap: 1 }}>
                     {transformText(value, memorizeMode).map((el, index) => (
                         <Tooltip title={el[0]} key={index}>
                             <Chip
