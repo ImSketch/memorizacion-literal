@@ -101,6 +101,7 @@ export default function Memorize()
     const handleMemorizeButton = () =>
     {
         setIsReading(!isReading);
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     // Cuando este listo para memorizar
@@ -123,7 +124,7 @@ export default function Memorize()
                     <>
                         <TextField
                             id="paragraph"
-                            label="Párrafos"
+                            label="Párrafo"
                             multiline
                             rows={15}
                             value={value}

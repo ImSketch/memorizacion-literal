@@ -11,7 +11,6 @@ export default function Home()
 				<title>Memoriza textos LITERALMENTE 🔥</title>
 				<meta name="description" content="Herramienta que te ayuda a aprender textos de manera literal" />
 			</Head>
-			<AppBar title='Practicar' />
 			<Container sx={{ marginY: 5, paddingBottom: 7 }}>
 				<Memorize />
 			</Container>
